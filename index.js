@@ -3,6 +3,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 3000;
 const DB = process.env.DB || 'mongodb://localhost/blog2021';
+mongoose.conecct(DB, { useNewUrparser: true })
+ .then(() => console.log('DB conectada'));
 const app = express();
 app.set('view engine', 'pug');
 app.set('views', './views');
